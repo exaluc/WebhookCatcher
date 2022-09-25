@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  api:
+    container_name: webhookcatcher
+    build:
+        context: src/
+        dockerfile: docker/Dockerfile
+    image: webhookcatcher:latest
+    environment:
+      - DYNACONF_dataPath=/opt/datawebhook/webhook.json
+    volumes:
+      - ./data/json/:/opt/datawebhook/
+    ports:
+        - "8081:8081"

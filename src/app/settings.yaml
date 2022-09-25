@@ -1,0 +1,5 @@
+title: webhook catcher
+description: catch webhook like a dream
+version: 1.0.0
+debug: true
+dataPath: ../data/webhook.json

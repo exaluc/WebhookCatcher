@@ -1,0 +1,5 @@
+# Ignore Docker build files
+Dockerfile
+.dockerignore
+.git
+webhook.json
