@@ -21,35 +21,35 @@ def dbInsertModel(h, d):
     r['request'] = d
     return r
 
-@router.post("/")
-async def post_webhook(request: Request):
+@router.post("/{item_dataset}")
+async def post_webhook(request: Request, item_dataset: str):
     try:
         h = dict(request.headers)
         logger.debug(json.dumps(h))
         d = await request.json()
         logger.debug(json.dumps(d))
         r = dbInsertModel(h, d)
-        db.insert(r)
+        db.insert(r, item_dataset)
         return JSONResponse(r)
     except Exception as res:    
         return res
 
-@router.get("/")
-async def get_webhooks(request: Request):
+@router.get("/{item_dataset}")
+async def get_webhooks(item_dataset: str, limit: int):
     try:
-        return JSONResponse(db.getAll())
+        return JSONResponse(db.getAll(item_dataset, limit))
     except Exception as res:    
         return res
 
-@router.put("/")
-async def put_webhook(request: Request):
+@router.put("/{item_dataset}")
+async def put_webhook(request: Request, item_dataset: str):
     try:
         h = dict(request.headers)
         logger.debug(json.dumps(h))
         d = await request.json()
         logger.debug(json.dumps(d))
         r = dbInsertModel(h, d)
-        db.insert(r)
+        db.insert(r, item_dataset)
         return JSONResponse(r)
     except Exception as res:    
         return res

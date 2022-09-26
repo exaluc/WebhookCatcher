@@ -14,14 +14,16 @@ class DbConnector:
         db = TinyDB(settings.dataPath)
         self.dbClient = db
 
-    def insert(self, data):
+    def insert(self, data, table):
         try:
-            return self.dbClient.insert(data)
+            d = self.dbClient.table(table)
+            return d.insert(data)
         except Exception as e:
             logger.warning(e)
 
-    def getAll(self):
+    def getAll(self, table, limit):
         try:
-            return self.dbClient.all()
+            d = self.dbClient.table(table)
+            return d.all()[-limit:]
         except Exception as e:
             logger.warning(e)
