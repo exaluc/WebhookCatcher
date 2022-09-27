@@ -1,0 +1,29 @@
+site_name: Webhook Catcher
+site_url: https://loop.brain.fr/WebhookCatcher
+repo_url: https://github.com/odgon/WebhookCatcher
+repo_name: odgon/WebhookCatcher
+nav:
+    - Motivations: index.md
+    - Installation: installation.md
+    - Examples: examples.md
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+copyright: "Copyright &copy; 2022 Lucian BLETAN"
+
+
+extra:
+  generator: false
