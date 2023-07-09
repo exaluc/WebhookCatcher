@@ -1,7 +1,7 @@
 site_name: Webhook Catcher
 site_url: https://loop.brain.fr/WebhookCatcher
-repo_url: https://github.com/odgon/WebhookCatcher
-repo_name: odgon/WebhookCatcher
+repo_url: https://github.com/exaluc/WebhookCatcher
+repo_name: exaluc/WebhookCatcher
 nav:
     - Motivations: index.md
     - Installation: installation.md
